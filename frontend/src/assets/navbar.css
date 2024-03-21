@@ -1,0 +1,60 @@
+/* Estilos para el contenedor del navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Ajusta el padding según sea necesario */
+}
+
+/* Estilos para la lista de elementos del navbar */
+.navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para alinear los elementos en línea */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para cada elemento de la lista del navbar */
+.navbar-item {
+    margin-right: 1rem; /* Espacio entre los elementos del navbar */
+}
+
+/* Estilos para los enlaces del navbar */
+.navbar-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.623); /* Color de texto por defecto */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Estilos para el hover de los enlaces del navbar */
+.navbar-link:hover {
+    color: rgb(230, 230, 230); /* Color gris para el hover */
+}
+
+/* Estilos para el elemento "Settings" */
+.navbar-item-settings {
+    margin-left: 150vh;
+    position: relative; /* Añade posicionamiento relativo */
+}
+
+/* Estilos para el texto de "Settings" */
+.navbar-item-settings .navbar-text {
+    display: none; /* Oculta el texto por defecto */
+    position: absolute; /* Posiciona el texto de forma absoluta */
+    top: 100%; /* Mueve el texto debajo del icono */
+    left: 50%; /* Centra el texto horizontalmente */
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+}
+
+/* Mostrar el texto cuando se hace hover */
+.navbar-item-settings:hover .navbar-text {
+    display: block; /* Muestra el texto cuando hay hover */
+}
+
+/* Estilos para el icono del navbar */
+.navbar-icon {
+    margin-right: 0.5rem; /* Espacio entre el icono y el texto */
+    color: #fff; /* Color del icono */
+}
