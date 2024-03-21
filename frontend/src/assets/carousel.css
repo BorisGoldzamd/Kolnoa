@@ -1,0 +1,9 @@
+.carousel-container {
+    max-width: 95%; /* Ajusta el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+  
+  .carousel-item {
+    width: 80%; /* Ajusta el ancho de cada elemento del carousel */
+  }
+  
