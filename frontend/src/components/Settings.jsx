@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import '../assets/settings.css'
+import '../assets/settings.css'; // Import the CSS styles file
+
 const Settings = () => {
-    // Estado para almacenar la información del usuario (solo como ejemplo)
+    // State to store user information (just as an example)
     const [userInfo, setUserInfo] = useState({
         username: 'example_user',
         email: 'example@example.com'
     });
 
-    // Función para manejar cambios en los datos del usuario
+    // Function to handle changes in user data
     const handleUserChange = (e) => {
         const { name, value } = e.target;
         setUserInfo(prevState => ({
@@ -16,28 +17,28 @@ const Settings = () => {
         }));
     };
 
-    // Función para manejar la acción de guardar los cambios en la información del usuario
+    // Function to handle saving changes to user information
     const handleSaveChanges = (e) => {
         e.preventDefault();
-        // Aquí puedes agregar la lógica para guardar los cambios en la información del usuario
+        // Here you can add logic to save changes to user information
         console.log('Changes saved');
     };
 
-    // Función para manejar la acción de cerrar sesión
+    // Function to handle the action of logging out
     const handleLogout = () => {
-        // Aquí puedes agregar la lógica para cerrar la sesión del usuario
+        // Here you can add logic to log out the user
         console.log('Logged out');
     };
 
-    // Función para manejar la acción de modificar la contraseña
+    // Function to handle the action of changing the password
     const handleChangePassword = () => {
-        // Aquí puedes agregar la lógica para cambiar la contraseña del usuario
+        // Here you can add logic to change the user's password
         console.log('Change password');
     };
 
-    // Función para manejar la acción de eliminar la cuenta
+    // Function to handle the action of deleting the account
     const handleDeleteAccount = () => {
-        // Aquí puedes agregar la lógica para eliminar la cuenta del usuario
+        // Here you can add logic to delete the user's account
         console.log('Delete account');
     };
 
@@ -56,7 +57,7 @@ const Settings = () => {
             </div>
             <div className='buttons'>
                 <h2>Account Actions</h2>
-                <button onClick={handleLogout}>Logout</button>
+                <button className='logout' onClick={handleLogout}>Logout</button>
                 <button onClick={handleChangePassword}>Change Password</button>
                 <button onClick={handleDeleteAccount}>Delete Account</button>
             </div>
