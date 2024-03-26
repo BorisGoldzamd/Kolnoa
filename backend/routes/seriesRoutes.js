@@ -7,18 +7,18 @@ const router = express.Router();
 const seriesController = require('../controllers/seriesController');
 
 // Ruta para obtener todas las series
-router.get('/series', seriesController.getAllSeries);
+router.get('/', seriesController.getAllSeries);
 
 // Ruta para obtener una serie por su ID
-router.get('/series/:id', seriesController.getSeriesById);
+router.get('/:id', seriesController.getSeriesById);
 
 // Ruta para agregar una nueva serie
-router.post('/series', seriesController.addSeries);
+router.post('/', seriesController.addSeries);
 
 // Ruta para actualizar una serie existente
-router.put('/series/:id', seriesController.updateSeries);
+router.put('/:id', seriesController.updateSeries);
 
 // Ruta para eliminar una serie
-router.delete('/series/:id', seriesController.deleteSeries);
+router.delete('/:id', seriesController.deleteSeries);
 
 module.exports = router;

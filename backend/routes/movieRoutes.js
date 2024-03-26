@@ -7,18 +7,18 @@ const router = express.Router();
 const moviesController = require('../controllers/moviesControllers');
 
 // Ruta para obtener todas las películas
-router.get('/movies', moviesController.getAllMovies);
+router.get('/', moviesController.getAllMovies);
 
 // Ruta para obtener una película por su ID
-router.get('/movies/:id', moviesController.getMovieById);
+router.get('/:id', moviesController.getMovieById);
 
 // Ruta para agregar una nueva película
-router.post('/movies', moviesController.addMovie);
+router.post('/', moviesController.addMovie);
 
 // Ruta para actualizar una película existente
-router.put('/movies/:id', moviesController.updateMovie);
+router.put('/:id', moviesController.updateMovie);
 
 // Ruta para eliminar una película
-router.delete('/movies/:id', moviesController.deleteMovie);
+router.delete('/:id', moviesController.deleteMovie);
 
 module.exports = router;
