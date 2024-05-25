@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 const homeRoutes = require('./homeRoutes');
 const movieRoutes = require('./movieRoutes');
@@ -8,4 +8,4 @@ router.use('/', homeRoutes);
 router.use('/', movieRoutes);
 router.use('/', seriesRoutes);
 
-module.exports = router;
+export default router;

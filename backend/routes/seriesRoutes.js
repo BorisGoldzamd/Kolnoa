@@ -1,24 +1,8 @@
-// routes/series.js
-
-const express = require('express');
+import express from 'express';
 const router = express.Router();
+import seriesController from'../controllers/seriesController';  // Asegúrate de que la ruta está correcta.
 
-// Importar el controlador de series
-const seriesController = require('../controllers/seriesController');
+// Definir la ruta para obtener series
+router.get('/', seriesController.fetchSeries);
 
-// Ruta para obtener todas las series
-router.get('/', seriesController.getAllSeries);
-
-// Ruta para obtener una serie por su ID
-router.get('/:id', seriesController.getSeriesById);
-
-// Ruta para agregar una nueva serie
-router.post('/', seriesController.addSeries);
-
-// Ruta para actualizar una serie existente
-router.put('/:id', seriesController.updateSeries);
-
-// Ruta para eliminar una serie
-router.delete('/:id', seriesController.deleteSeries);
-
-module.exports = router;
+export default router;

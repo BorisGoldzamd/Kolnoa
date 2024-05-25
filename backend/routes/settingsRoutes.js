@@ -1,4 +1,5 @@
-const express = require('express');
+import express from 'express';
+
 const router = express.Router();
 const SettingsController = require('../controllers/SettingsController');
 
@@ -7,4 +8,4 @@ router.put('/settings/profile', SettingsController.updateUserProfile);
 router.put('/settings/password', SettingsController.changePassword);
 router.delete('/settings/logout', SettingsController.logout);
 
-module.exports = router;
+export default router;

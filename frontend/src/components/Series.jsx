@@ -1,18 +1,27 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Carousel from './Carousel';
 
 const Series = () => {
-  // Aquí recuperas los datos de las series desde tu base de datos o cualquier otra fuente
-  const seriesData = [
-    { videoUrl: 'https://www.youtube.com/embed/EySdVK0NK1Y?si=W7iiW9gE7ABK1EgN', title: 'Serie 1' },
-    { videoUrl: 'https://www.youtube.com/embed/_inKs4eeHiI?si=g1HhqbEuuIJG9gJG', title: 'Serie 2' }
-    // Agrega más datos de series según sea necesario
-  ];
+  const [series, setSeries] = useState([]);
+
+  useEffect(() => {
+    // Realiza la solicitud al backend para obtener los datos de las series
+    fetch('http://localhost:3000/series')
+      .then(response => response.json())
+      .then(data => setSeries(data))
+      .catch(error => console.error('Error fetching series:', error));
+  }, []);
 
   return (
     <div>
-      <h2>Series</h2>
-      <Carousel items={seriesData} />
+      <h1>Series</h1>
+      <Carousel items={series.map(serie => ({
+        title: serie.title,
+        description: serie.description, // Puedes usar la descripción si lo deseas
+        releaseYear: serie.release_year,
+        genre: serie.genre,
+        videoUrl: serie.embed_code.match(/src="([^"]+)"/)[1] // Extrae la URL del src del iframe
+      }))} />
     </div>
   );
 };

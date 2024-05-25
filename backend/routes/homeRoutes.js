@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 const HomeController = require('../controllers/HomeController');
 
@@ -7,4 +7,4 @@ router.get('/', HomeController.getHomePage);
 router.get('/settings', HomeController.getHomeSettings);
 // Otras rutas relacionadas con la página principal...
 
-module.exports = router;
+export default router;

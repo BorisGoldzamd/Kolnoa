@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 class ExternalService {
   static async sendEmail(to, subject, message) {
@@ -12,4 +12,4 @@ class ExternalService {
   // Otros métodos de integración externa...
 }
 
-module.exports = ExternalService;
+export default ExternalService;

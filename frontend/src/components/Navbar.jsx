@@ -2,9 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCog, faFilm, faTv } from '@fortawesome/free-solid-svg-icons';
-import '../assets/navbar.css';
+import { useSearch } from './SearchContext';  // Importa el hook personalizado
 
 const Navbar = () => {
+    // Accede al contexto de búsqueda
+    const { searchTerm, setSearchTerm, fetchSearchResults } = useSearch();
+
+    // Maneja los cambios en el input de búsqueda
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);  // Actualiza el término de búsqueda en el contexto
+    };
+
+    // Maneja el envío del formulario de búsqueda
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        fetchSearchResults(searchTerm);  // Ejecuta la búsqueda usando el término actualizado
+    };
+
     return (
         <nav className="navbar-container">
             <ul className="navbar-list">
@@ -33,8 +47,18 @@ const Navbar = () => {
                     </Link>
                 </li>
             </ul>
+            <form onSubmit={handleSearchSubmit} className="search-form">
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    placeholder="Search movies, series..."
+                    className="search-input"
+                />
+                <button type="submit" className="search-button">Search</button>
+            </form>
         </nav>
     );
-}
+};
 
 export default Navbar;

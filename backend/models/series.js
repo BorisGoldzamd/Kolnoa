@@ -1,17 +1,10 @@
-const knex = require('knex');
-const knexConfig = require('../config/dbConfig');
+class Series {
+    constructor(data) {
+        this.title = data.Title;    // Título de la serie
+        this.year = data.Year;      // Año de lanzamiento
+        this.poster = data.Poster;  // URL del póster
+        this.genre = data.Genre;    // Género(s) de la serie
+    }
+}
 
-const db = knex(knexConfig);
-
-module.exports = {
-    getAllSeries: async () => {
-        try {
-            const series = await db.select('*').from('series');
-            return series;
-        } catch (error) {
-            console.error('Error fetching series:', error);
-            throw error;
-        }
-    },
-    // Add more functions for CRUD operations if needed
-};
+export default Series;

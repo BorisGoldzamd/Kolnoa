@@ -1,4 +1,4 @@
-const knex = require('../config/dbConfig');
+import dbconfig from ('../config/dbConfig');
 
 class DatabaseService {
   static async getAllUsers() {
